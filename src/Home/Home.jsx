@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import Banner from '../Components/Banner/Banner';
 import Slider from '../Components/Silder/Slider';
-import PopularGames from '../Components/PopularGames/PopularGames';
+
 import NewsLetter from '../Components/NewsLetter/NewsLetter';
+import PopularHome from '../Components/PopularHome/PopularHome';
 
 const Home = () => {
 
@@ -13,7 +14,7 @@ const Home = () => {
     return (
     <>
     <Slider></Slider>
-    <PopularGames></PopularGames>
+    <PopularHome></PopularHome>
     <NewsLetter></NewsLetter>
     
     </>

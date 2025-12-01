@@ -35,7 +35,7 @@ const Navbar = () => {
       </NavLink>
 
        <NavLink
-        to="/add-properties"
+        to="/properties"
         className={({ isActive }) =>
           `px-4 py-2 transition-all duration-300 ${
             isActive

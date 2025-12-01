@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
        
         },
           {
-         path: "/add-properties",
+         path: "/properties",
     Component:AddProperties,
        
         },

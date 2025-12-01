@@ -49,6 +49,8 @@ const Profile = () => {
   //     });
   // };
 
+  console.log(user);
+
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
       <div className="w-full max-w-lg bg-white/20 backdrop-blur-xl shadow-2xl rounded-3xl border border-white/30 p-8 text-white bg-gradient-to-br from-[#3A0CA3] via-[#7209B7] to-[#B5179E]">
