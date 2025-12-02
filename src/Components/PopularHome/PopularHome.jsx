@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from "motion/react"
 import { FaCalendar, FaStar } from "react-icons/fa";
+import { Link } from 'react-router';
 
 
 const PopularHome = () => {
@@ -49,7 +50,10 @@ const PopularHome = () => {
         </div>
 
         <div className="card-actions justify-end">
-        <button className="btn btn-primary">View details</button>
+        
+        <Link to={`/details/${property?._id}`}>
+         <button className="btn btn-primary">View details</button>
+        </Link>
         </div>
 
         </div>

@@ -35,12 +35,12 @@ export const router = createBrowserRouter([
         },
           {
          path: "/properties",
-    Component:AddProperties,
+    element:<PrivateRoute><AddProperties></AddProperties></PrivateRoute>,
        
         },
           {
          path: "/my-properties",
-    Component:MyProperties,
+    element:<PrivateRoute><MyProperties></MyProperties></PrivateRoute>,
        
         },
         {
