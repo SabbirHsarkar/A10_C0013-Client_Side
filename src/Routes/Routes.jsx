@@ -9,7 +9,6 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import Profile from '../Pages/Profile';
 import PrivateRoute from './PrivateRoute';
-import GameDetails from '../Pages/GameDetails';
 import UpdateProfile from '../Pages/UpdateProfile';
 import ForgetPass from '../Pages/ForgetPass';
 import ErrorPage from '../Pages/ErrorPage';
@@ -17,6 +16,7 @@ import AllProperties from '../Pages/AllProperties';
 import AddProperties from '../Pages/AddProperties';
 import MyProperties from '../Pages/MyProperties';
 import MyRatings from '../Pages/MyRatings';
+import PropertyDetails from '../Pages/PropertyDetails';
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -60,7 +60,7 @@ export const router = createBrowserRouter([
         },
         {
           path:"/details/:myId",
-          element:<PrivateRoute><GameDetails></GameDetails></PrivateRoute>
+          element:<PrivateRoute><PropertyDetails></PropertyDetails></PrivateRoute>
         },
         {
           path:"/forget/:email",

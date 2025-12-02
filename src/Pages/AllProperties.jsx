@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from "motion/react"
-import { FaStar } from "react-icons/fa";
+import { FaCalendar, FaStar } from "react-icons/fa";
 
 const AllProperties = () => {
 
     const [properties,setProperties]=useState([]);
     
         useEffect(()=>{
-            fetch('http://localhost:3000/properties')
+            fetch(`http://localhost:3000/properties`)
             .then(res=>res.json())
             .then(data=>setProperties(data))
             .catch(err=>console.log(err))
@@ -36,7 +36,7 @@ const AllProperties = () => {
          <div className='flex flex-2 gap-5 justify-between '>
            <div className="justify-start mt-3">
   <p className="flex items-center gap-1">
-    <FaStar className="text-yellow-500" />
+    <FaCalendar className="text-yellow-500" />
     {property?.date}
   </p>
 </div>

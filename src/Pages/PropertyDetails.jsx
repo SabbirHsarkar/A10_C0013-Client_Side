@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
-const GameDetails = () => {
+const PropertyDetails = () => {
 
     const { myId } = useParams();
     const [property, setProperty] = useState([]);
@@ -29,4 +29,4 @@ const GameDetails = () => {
     );
 };
 
-export default GameDetails;
+export default PropertyDetails;
