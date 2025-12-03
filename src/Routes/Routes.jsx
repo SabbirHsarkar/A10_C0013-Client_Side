@@ -4,7 +4,7 @@ import { createBrowserRouter } from "react-router";
 import Root from '../Root/Root';
 import Home from '../Home/Home';
 import About from '../Pages/About';
-import Games from '../Pages/Games';
+
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import Profile from '../Pages/Profile';
@@ -17,6 +17,7 @@ import AddProperties from '../Pages/AddProperties';
 import MyProperties from '../Pages/MyProperties';
 import MyRatings from '../Pages/MyRatings';
 import PropertyDetails from '../Pages/PropertyDetails';
+import UpdateProperties from '../Pages/UpdateProperties';
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -90,6 +91,11 @@ export const router = createBrowserRouter([
 {
   path:'/about',
   Component:About
+}
+,
+{
+  path:'/update-properties/:id',
+  Component:UpdateProperties
 }
 
         

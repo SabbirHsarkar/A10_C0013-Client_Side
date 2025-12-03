@@ -3,7 +3,6 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router";
 import { FaLocationDot } from "react-icons/fa6";
 
-
 const MyProperties = () => {
   const [myProperties, setMyProperties] = useState([]);
   const { user } = useContext(AuthContext);
@@ -53,17 +52,16 @@ const MyProperties = () => {
               </p>
 
               <p className="text-gray-600 text-sm mb-1 justify-center">
-                <FaLocationDot />{property.location}
+                <FaLocationDot />
+                {property.location}
               </p>
 
-              <p className="text-gray-400 text-xs">
-                Posted: {property.date}
-              </p>
+              <p className="text-gray-400 text-xs">Posted: {property.date}</p>
 
               {/* Buttons */}
               <div className="mt-4 flex gap-2">
                 <Link
-                  to={`/update/${property._id}`}
+                  to={`/update-properties/${property._id}`}
                   className="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 rounded-md text-center"
                 >
                   Update
@@ -74,8 +72,8 @@ const MyProperties = () => {
                 </button>
 
                 <Link to={`/details/${property?._id}`}>
-                         <button className="btn btn-primary">View details</button>
-                        </Link>
+                  <button className="btn btn-primary">View details</button>
+                </Link>
               </div>
             </div>
           </div>
