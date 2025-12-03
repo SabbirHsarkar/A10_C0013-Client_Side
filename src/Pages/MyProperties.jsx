@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router";
 import { FaLocationDot } from "react-icons/fa6";
+import axios from "axios";
 
 const MyProperties = () => {
   const [myProperties, setMyProperties] = useState([]);
@@ -15,6 +16,22 @@ const MyProperties = () => {
       .then((data) => setMyProperties(data))
       .catch((err) => console.log(err));
   }, [user?.email]);
+
+
+  const handleDelete=(id)=>{
+    axios.delete(`http://localhost:3000/delete/${id}`)
+    .then(res=>{
+      console.log(res.data);
+      const filterData= myProperties.filter(property=>property._id!=id)
+      console.log(filterData);
+      setMyProperties(filterData)
+      
+    })
+    .catch(err=>{
+      console.log(err);
+      
+    })
+  }
 
   return (
     <div className=" lg:px-[145px]">
@@ -67,7 +84,7 @@ const MyProperties = () => {
                   Update
                 </Link>
 
-                <button className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md">
+                <button onClick={()=>handleDelete(property?._id)} className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md">
                   Delete
                 </button>
 
