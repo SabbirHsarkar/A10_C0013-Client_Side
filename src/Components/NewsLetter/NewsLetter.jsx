@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 const NewsLetter = () => {
   const navigate=useNavigate();
     return (
-        <div className="w-full bg-[#0f1115] py-20 px-4 text-white">
+        <div className="w-full bg-[#0d0714da] py-20 px-4 text-white">
       <div className="max-w-3xl mx-auto text-center">
         
         {/* Icon */}
@@ -21,7 +21,7 @@ const NewsLetter = () => {
 
         {/* Sub Text */}
         <p className="text-gray-300 mt-4 text-lg leading-relaxed">
-          Get the latest updates, game news, and exclusive offers directly in your inbox.
+          Get the latest updates, real-estate news, and exclusive offers directly in your inbox.
         </p>
 
         {/* Button */}

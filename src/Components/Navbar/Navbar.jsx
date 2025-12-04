@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
-import logo from "../../assets/image/gamehub.png";
+
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaHouseUser } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -116,8 +117,8 @@ const Navbar = () => {
               to="/"
               className="flex items-center gap-2 text-white font-semibold text-lg"
             >
-              <img src={logo} alt="logo" className="w-6" />
-              HomeNest
+              {/* <img src={logo} alt="logo" className="w-6" /> */}
+              <FaHouseUser />HomeNest
             </Link>
 
             <div className="hidden md:flex gap-6 text-sm font-medium text-white">

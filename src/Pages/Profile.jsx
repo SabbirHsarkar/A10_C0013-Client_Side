@@ -6,48 +6,7 @@ import { Link } from "react-router";
 
 const Profile = () => {
   const {  user } = useContext(AuthContext);
-  // const [isOpen, setIsOpen] = useState(false);
 
-
-  // const handleOpenForm = () => {
-  //   setIsOpen(!isOpen);
-  // };
-
-  // const handleUpdate=(e)=>{
-  //   e.preventDefault();
-  //   const name=e.target.name.value;
-  //   const photoURL=e.target.photoURL.value;
-
-  //   updateProfile(auth.currentUser, {
-  //     displayName: name,
-  //     photoURL: photoURL,
-  //   })
-  //     .then((r) => {
-  //       console.log(r);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }
-
-  // const handleUpdate = (e) => {
-  //   e.preventDefault();
-  //   const name = e.target.name.value;
-  //   const photoURL = e.target.photoURL.value;
-
-  //   updateProfile(auth.currentUser, {
-  //     displayName: name,
-  //     photoURL: photoURL,
-  //   })
-  //     .then(() => {
-  //       setUser({ ...auth.currentUser });
-  //       
-  //       setIsOpen(false);
-  //     })
-  //     .catch((error) => {
-  //      
-  //     });
-  // };
 
   console.log(user);
 
@@ -102,37 +61,6 @@ const Profile = () => {
           Update Profile
         </Link>
 
-        {/* {isOpen && (
-          <form onSubmit={handleUpdate} className="space-y-4 mt-4">
-            <div>
-              <label className="label">
-                <span className="label-text font-semibold">Name</span>
-              </label>
-              <input
-                defaultValue={user?.displayName}
-                name="name"
-                type="text"
-                className="input input-bordered w-full text-black"
-                placeholder="Enter your name"
-              />
-            </div>
-
-            <div>
-              <label className="label">
-                <span className="label-text font-semibold">PhotoURL</span>
-              </label>
-              <input
-                defaultValue={user?.photoURL}
-                name="photoURL"
-                type="text"
-                className="input input-bordered w-full text-black"
-                placeholder="Enter photoURL"
-              />
-            </div>
-
-            <button className="btn btn-neutral w-full mt-2">Update</button>
-          </form>
-        )} */}
       </div>
     </div>
   );

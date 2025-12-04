@@ -4,6 +4,8 @@ import Slider from '../Components/Silder/Slider';
 
 import NewsLetter from '../Components/NewsLetter/NewsLetter';
 import PopularHome from '../Components/PopularHome/PopularHome';
+import WhyChoose from '../Components/WhyChoose/WhyChoose';
+import FeaturedService from '../Components/FeaturedService/FeaturedService';
 
 const Home = () => {
 
@@ -15,6 +17,8 @@ const Home = () => {
     <>
     <Slider></Slider>
     <PopularHome></PopularHome>
+    <WhyChoose></WhyChoose>
+    <FeaturedService></FeaturedService>
     <NewsLetter></NewsLetter>
     
     </>

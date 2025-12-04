@@ -50,7 +50,6 @@ const PropertyDetails = () => {
   return (
     <div className="max-w-5xl mx-auto p-6">
 
-      {/* ----------------- Property Info ----------------- */}
       <h2 className="text-3xl font-bold mb-3">{property.name}</h2>
 
       <img
@@ -60,15 +59,15 @@ const PropertyDetails = () => {
       />
 
       <div className="mt-5 text-lg space-y-2">
-        <p><strong>Category:</strong> {property.category}</p>
-        <p><strong>Price:</strong> {property.price} BDT</p>
-        <p><strong>Location:</strong> {property.location}</p>
-        <p><strong>Description:</strong> {property.description}</p>
-        <p><strong>Posted by:</strong> {property.username} ({property.email})</p>
-        <p><strong>Posted date:</strong> {property.postedDate}</p>
+        <p><strong>Category:</strong> {property?.category}</p>
+        <p><strong>Price:</strong> {property?.price} BDT</p>
+        <p><strong>Location:</strong> {property?.location}</p>
+        <p><strong>Description:</strong> {property?.description}</p>
+        <p><strong>Posted by:</strong> {property?.username} ({property.email})</p>
+        <p><strong>Posted date:</strong> {property?.date}</p>
       </div>
 
-      {/* ---------------- Review Form ---------------- */}
+      {/*Form */}
       <form onSubmit={handleSubmit}
         className="mt-8 bg-white p-5 rounded-lg shadow">
         <h3 className="text-xl font-semibold mb-3">Add Rating</h3>
@@ -97,7 +96,7 @@ const PropertyDetails = () => {
         </button>
       </form>
 
-      {/* ---------------- Ratings List ---------------- */}
+      {/*Ratings*/}
       <div className="mt-10">
         <h3 className="text-2xl font-bold mb-4">Ratings & Reviews</h3>
 

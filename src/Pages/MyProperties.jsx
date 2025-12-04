@@ -34,69 +34,82 @@ const MyProperties = () => {
   }
 
   return (
-    <div className=" lg:px-[145px]">
-      <h1 className="text-3xl font-semibold mb-6">My Properties</h1>
+    <div className="lg:px-[145px] py-10">
+  <h1 className="text-3xl font-bold mb-8 text-gray-800">
+    My Properties
+  </h1>
 
-      {/* Empty State */}
-      {myProperties.length === 0 && (
-        <p className="text-gray-600 text-lg bg-yellow-50 border border-yellow-200 p-4 rounded-md">
-          You haven't added any properties yet…
-        </p>
-      )}
-
-      {/* Card Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {myProperties.map((property) => (
-          <div
-            key={property._id}
-            className="bg-white shadow-md rounded-xl overflow-hidden"
-          >
-            {/* Image */}
-            <div className="h-48 w-full">
-              <img
-                src={property.image}
-                className="w-full h-full object-cover"
-                alt=""
-              />
-            </div>
-
-            {/* Content */}
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-1">{property.name}</h2>
-              <p className="text-gray-500 text-sm">{property.category}</p>
-              <p className="text-blue-600 font-bold text-lg mb-2">
-                ৳ {property.price}
-              </p>
-
-              <p className="text-gray-600 text-sm mb-1 justify-center">
-                <FaLocationDot />
-                {property.location}
-              </p>
-
-              <p className="text-gray-400 text-xs">Posted: {property.date}</p>
-
-              {/* Buttons */}
-              <div className="mt-4 flex gap-2">
-                <Link
-                  to={`/update-properties/${property._id}`}
-                  className="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 rounded-md text-center"
-                >
-                  Update
-                </Link>
-
-                <button onClick={()=>handleDelete(property?._id)} className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md">
-                  Delete
-                </button>
-
-                <Link to={`/details/${property?._id}`}>
-                  <button className="btn btn-primary">View details</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+  {/* Empty State */}
+  {myProperties.length === 0 && (
+    <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-xl text-center text-lg text-gray-600 shadow-sm">
+      You haven’t added any properties yet…
     </div>
+  )}
+
+  {/* Property Grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {myProperties.map((property) => (
+      <div
+        key={property._id}
+        className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100"
+      >
+        {/* Image */}
+        <div className="h-48 w-full overflow-hidden">
+          <img
+            src={property.image}
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            alt=""
+          />
+        </div>
+
+        {/* Content */}
+        <div className="p-5 space-y-2">
+          <h2 className="text-xl font-semibold text-gray-800">
+            {property.name}
+          </h2>
+          <p className="text-gray-500 text-sm">{property.category}</p>
+
+          <p className="text-blue-600 font-bold text-xl">
+            ৳ {property.price}
+          </p>
+
+          <div className="flex items-center gap-1 text-gray-600 text-sm">
+            <FaLocationDot className="text-red-500" />
+            <span>{property.location}</span>
+          </div>
+
+          <p className="text-gray-400 text-xs">
+            Posted: {property.date}
+          </p>
+
+          {/* Buttons */}
+          <div className="pt-4 flex gap-2">
+            <Link
+              to={`/update-properties/${property._id}`}
+   className="flex-1 bg-green-500 hover:bg-green-600 transition-all text-white py-2 rounded-lg font-medium shadow-sm items-center"
+            >
+            <span className="text-white ml-7">Update</span>
+            </Link>
+
+            <button
+              onClick={() => handleDelete(property?._id)}
+              className="flex-1 bg-red-600 hover:bg-red-700 transition-all text-white py-2 rounded-lg font-medium shadow-sm"
+            >
+              Delete
+            </button>
+
+            <Link to={`/details/${property?._id}`}>
+              <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-white font-medium transition-all shadow-sm">
+                View
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
   );
 };
 
