@@ -35,7 +35,7 @@ const PopularHome = () => {
               transition: { duration: 0.8, delay: index * 0.2 },
             }}
             whileHover={{ scale: 1.03 }}
-            className="bg-white/70 backdrop-blur-lg rounded-xl shadow-xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-all"
+    className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100"
           >
             {/* Image Container */}
             <div className="relative group">

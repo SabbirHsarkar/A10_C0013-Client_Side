@@ -2,7 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import { AuthContext } from "../Provider/AuthProvider";
-import toast from "react-hot-toast";
+
+import Swal from "sweetalert2";
 
 const PropertyDetails = () => {
   const { myId } = useParams();
@@ -42,7 +43,13 @@ const PropertyDetails = () => {
       setRatings([...ratings, ratingData]);
       setStars(0);
       setReview("");
-      toast.success("Review added successfully!");
+      Swal.fire({
+        icon: 'success',
+        title: 'Thank you!',
+        text: 'Your review has been added successfully.',
+        showConfirmButton: false,
+        timer: 2000
+      });
     });
   };
 
