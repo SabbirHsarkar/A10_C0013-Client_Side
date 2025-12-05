@@ -26,6 +26,7 @@ const MyProperties = () => {
       const filterData= myProperties.filter(property=>property._id!=id)
       console.log(filterData);
       setMyProperties(filterData)
+      
        toast.success("Deleted successfully!");
       
     })

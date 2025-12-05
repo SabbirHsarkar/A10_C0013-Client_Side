@@ -5,19 +5,38 @@ import { FaCalendar } from "react-icons/fa";
 
 const AllProperties = () => {
   const [properties, setProperties] = useState([]);
+  const [category,setCategory]=useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:3000/properties`)
+    fetch(`http://localhost:3000/properties?category=${category}`)
       .then((res) => res.json())
       .then((data) => setProperties(data))
       .catch((err) => console.log(err));
-  }, []);
+      console.log("Sabbir");
+      
+  }, [category]);
+
+  console.log(category);
+  
 
   return (
     <div className="py-16 lg:px-[145px]">
+
+     
+
       <h2 className="text-4xl font-bold text-center text-blue-900 mb-10">
         All Properties
       </h2>
+
+
+       <select onChange={(e)=>setCategory(e.target.value)} 
+       defaultValue="Pick a Category" className="select select-primary mb-5">
+  <option disabled={true}>Pick a Category</option>
+   <option value="Rent">Rent</option>
+          <option value="Sale">Sale</option>
+         <option value="Commercial">Commercial</option>
+        <option value="Land">Land</option>
+</select>
 
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"

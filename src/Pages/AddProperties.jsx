@@ -47,143 +47,171 @@ const AddProperties = () => {
     navigation('/all-properties')
 
   }
-    return (
- <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-10">
-      <h2 className="text-2xl font-bold text-center mb-5">
-        Add New Property
-      </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 px-4 py-10">
+      
+      <div className="w-full max-w-2xl bg-white/80 backdrop-blur-xl shadow-2xl rounded-3xl p-10 border border-white/40 relative overflow-hidden">
 
-        {/* Property Name */}
-        <div>
-          <label className="font-semibold">Property Name</label>
-          <input
-            type="text"
-            name="name"
-            
-            placeholder="Enter property name"
-            className="w-full p-3 border rounded-lg"
-            required
-          />
-        </div>
+        {/* Decorative Background Shapes */}
+        <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-300/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 -left-10 w-48 h-48 bg-blue-400/20 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
 
-        {/* Description */}
-        <div>
-          <label className="font-semibold">Description</label>
-          <textarea
-            name="description"
-           
-            placeholder="Write description"
-            className="w-full p-3 border rounded-lg"
-            required
-          ></textarea>
-        </div>
+        {/* Header */}
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8 drop-shadow-sm">
+          Add a New <span className="text-blue-600">Property</span>
+        </h2>
 
-        {/* Category */}
-        <div>
-          <label className="font-semibold">Category</label>
-          <select
-            name="category"
-         
-            className="w-full p-3 border rounded-lg"
-            required
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+
+          {/* Property Name */}
+          <div>
+            <label className="font-semibold block">Property Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Ex: Lakeview Apartment"
+              className="input input-bordered w-full bg-white/70 backdrop-blur-md shadow focus:border-blue-500"
+              required
+            />
+          </div>
+
+          {/* Description */}
+          <div>
+            <label className="font-semibold block">Description</label>
+            <textarea
+              name="description"
+              placeholder="Short details about the property..."
+              className="textarea textarea-bordered w-full bg-white/70 backdrop-blur-md shadow"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+
+          {/* Category */}
+          <div className="relative">
+            <label className="font-semibold block mb-1">Category</label>
+
+            <div className="relative">
+              <select
+                name="category"
+                className="
+                  w-full appearance-none
+                  bg-white/60 backdrop-blur-md
+                  border-2 border-blue-200
+                  focus:border-blue-500
+                  rounded-xl p-3
+                  text-gray-700 font-medium
+                  shadow-sm
+                  transition-all duration-300
+                  cursor-pointer
+                "
+                required
+              >
+                <option value="">🔽 Select Category</option>
+                <option value="Rent">🏘️ Rent</option>
+                <option value="Sale">💰 Sale</option>
+                <option value="Commercial">🏢 Commercial</option>
+                <option value="Land">🌱 Land</option>
+              </select>
+
+              {/* Arrow Icon */}
+              <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-blue-600">
+                ▼
+              </span>
+            </div>
+          </div>
+
+          {/* Price */}
+          <div>
+            <label className="font-semibold block">Price (BDT)</label>
+            <input
+              type="number"
+              name="price"
+              placeholder="Ex: 35000"
+              className="input input-bordered w-full bg-white/70 backdrop-blur-md shadow"
+              required
+            />
+          </div>
+
+          {/* Location */}
+          <div>
+            <label className="font-semibold block">Location</label>
+            <input
+              type="text"
+              name="location"
+              placeholder="City, Area, or Full Address"
+              className="input input-bordered w-full bg-white/70 backdrop-blur-md shadow"
+              required
+            />
+          </div>
+
+          {/* Image URL */}
+          <div>
+            <label className="font-semibold block">Image URL</label>
+            <input
+              type="text"
+              name="image"
+              placeholder="Paste property image link"
+              className="input input-bordered w-full bg-white/70 backdrop-blur-md shadow"
+              required
+            />
+          </div>
+
+          {/* Date */}
+          <div>
+            <label className="font-semibold block">Listing Date</label>
+            <input
+              type="date"
+              name="date"
+              className="input input-bordered w-full bg-white/70 backdrop-blur-md shadow"
+              required
+            />
+          </div>
+
+          {/* Email (Read Only) */}
+          <div>
+            <label className="font-semibold block">User Email</label>
+            <input
+              type="email"
+              name="email"
+              value={user?.email}
+              className="input w-full bg-gray-100 cursor-not-allowed"
+              readOnly
+            />
+          </div>
+
+          {/* Username (Read Only) */}
+          <div>
+            <label className="font-semibold block">User Name</label>
+            <input
+              type="text"
+              name="username"
+              value={user?.displayName}
+              className="input w-full bg-gray-100 cursor-not-allowed"
+              readOnly
+            />
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="
+              w-full bg-blue-600 hover:bg-blue-700 
+              text-white font-semibold text-lg p-3 
+              rounded-xl shadow-lg 
+              transition-all duration-300 
+              hover:scale-[1.03]
+            "
           >
-            <option value="">Select Category</option>
-            <option value="Rent">Rent</option>
-            <option value="Sale">Sale</option>
-            <option value="Commercial">Commercial</option>
-            <option value="Land">Land</option>
-          </select>
-        </div>
-
-        {/* Price */}
-        <div>
-          <label className="font-semibold">Price (in BDT)</label>
-          <input
-            type="number"
-            name="price"
-        
-            placeholder="Enter price"
-            className="w-full p-3 border rounded-lg"
-            required
-          />
-        </div>
-
-        {/* Location */}
-        <div>
-          <label className="font-semibold">Location</label>
-          <input
-            type="text"
-            name="location"
-         
-            placeholder="City, area, or full address"
-            className="w-full p-3 border rounded-lg"
-            required
-          />
-        </div>
-
-        {/*Img*/}
-        <div>
-          <label className="font-semibold">Image URL</label>
-          <input
-            type="text"
-            name="image"
-         
-            placeholder="Paste image link"
-            className="w-full p-3 border rounded-lg"
-            required
-          />
-        </div>
-
-        
-        {/* Date */}
-        <div>
-          <label className="font-semibold">Listing Date</label>
-          <input
-            type="date"
-            name="date"
-           
-            className="w-full p-3 border rounded-lg"
-            required
-          />
-        </div>
-
-        {/* User Email*/}
-        <div>
-          <label className="font-semibold">User Email</label>
-          <input
-            type="email"
-            name="email"
-           value={user?.email}
-            readOnly
-            className="w-full p-3 border bg-gray-100 rounded-lg cursor-not-allowed"
-          />
-        </div>
-
-        {/* User Name (Read Only) */}
-        <div>
-          <label className="font-semibold">User Name</label>
-          <input
-            type="text"
-            name="username"
-            value={user?.displayName}
-            readOnly
-            className="w-full p-3 border bg-gray-100 rounded-lg cursor-not-allowed"
-          />
-        </div>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg font-semibold"
-        >
-          Add Property
-        </button>
-
-      </form>
+            Add Property
+          </button>
+        </form>
+      </div>
     </div>
-    );
+  );
 };
 
 export default AddProperties;
