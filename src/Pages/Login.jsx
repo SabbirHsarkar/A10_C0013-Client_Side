@@ -4,6 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from 'react-toastify';
 
 const Login = () => {
 
@@ -29,6 +30,7 @@ const handleSubmit = (e) => {
       const user = userCredential.user;
       setUser(user);
       navigate(location?.state?.from || "/profile");
+      toast.success("Login Successful!"); 
       
     })
     .catch((error) => {
@@ -44,6 +46,7 @@ const googleSignIn=()=>{
     const user=result.user
     setUser(user)
     navigate(location?.state?.from || "/profile");
+    toast.success("Registration Successful!"); 
   })
   .catch(err=>console.log(err))
   

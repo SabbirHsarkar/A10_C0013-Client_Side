@@ -1,14 +1,25 @@
 
 import React from "react";
+import { Toaster } from "react-hot-toast";
 
 
 
 
 function App() {
   return (
-    <div>
-     
-    </div>
+    <>
+    <Toaster position="top-center" reverseOrder={false} />
+    <Route
+            path="/properties"
+            element={
+              <PrivateRoute>
+                <AddProperties />
+              </PrivateRoute>
+            }
+          />
+    </>
+    
+         
   );
 }
 

@@ -5,11 +5,14 @@ import auth from "../firebase/firebase.config";
 import { updateProfile } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { Link } from "react-router";
+
+import { Link, useNavigate } from "react-router";
+
 
 const Register = () => {
   const { registerWithEmailPassword, setUser, handleGoogleSignIn } = useContext(AuthContext);
+
+  const navigation=useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,15 +25,18 @@ const Register = () => {
     const lowercase = /[a-z]/;
 
     if (pass.length < 6) {
-      return alert("Password should be at least 6 characters");
+      toast.error("Password is less than 6 character"); 
+      return 
     }
 
     if (!uppercase.test(pass)) {
-      return alert("Password needs at least one uppercase letter");
+      toast.error("Need Uppercase Character!"); 
+      return 
     }
 
     if (!lowercase.test(pass)) {
-      return alert("Password needs at least one lowercase letter");
+       toast.error("Need Lowercase Character!"); 
+       return
     }
 
     registerWithEmailPassword(email, pass)
@@ -42,6 +48,7 @@ const Register = () => {
           .then(() => {
             setUser(userCredential.user);
             toast.success("Registration Successful!"); 
+            navigation('/profile')
           })
           .catch((error) => {
             toast.error("Error updating profile");
@@ -60,6 +67,7 @@ const Register = () => {
         const user = result.user;
         setUser(user);
         toast.success("Google sign-up successful!");
+          navigation('/profile')
       })
       .catch((err) => {
         toast.error("Google sign-up failed");

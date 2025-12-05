@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
-
+import toast from "react-hot-toast";
 const UpdateProperties = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
@@ -50,6 +50,7 @@ const UpdateProperties = () => {
       .then((res) => {
         console.log(res.data);
         navigation(`/details/${properties?._id}`)
+        toast.success("Property updated successfully!");
       })
       .catch((err) => {
         console.log(err);
@@ -60,7 +61,7 @@ const UpdateProperties = () => {
       <h2 className="text-2xl font-bold text-center mb-5">Update Property</h2>
 
       <form onSubmit={handleUpdate} className="space-y-4">
-        {/* Property Name */}
+        
         <div>
           <label className="font-semibold">Property Name</label>
           <input
@@ -73,7 +74,7 @@ const UpdateProperties = () => {
           />
         </div>
 
-        {/* Description */}
+        
         <div>
           <label className="font-semibold">Description</label>
           <textarea
@@ -85,7 +86,7 @@ const UpdateProperties = () => {
           ></textarea>
         </div>
 
-        {/* Category */}
+    
         <div>
           <label className="font-semibold">Category</label>
           <select
@@ -103,7 +104,7 @@ const UpdateProperties = () => {
           </select>
         </div>
 
-        {/* Price */}
+        
         <div>
           <label className="font-semibold">Price (in BDT)</label>
           <input
@@ -116,7 +117,7 @@ const UpdateProperties = () => {
           />
         </div>
 
-        {/* Location */}
+     
         <div>
           <label className="font-semibold">Location</label>
           <input
@@ -129,7 +130,7 @@ const UpdateProperties = () => {
           />
         </div>
 
-        {/*Img*/}
+        
         <div>
           <label className="font-semibold">Image URL</label>
           <input
@@ -142,7 +143,7 @@ const UpdateProperties = () => {
           />
         </div>
 
-        {/* User Email*/}
+       
         <div>
           <label className="font-semibold">User Email</label>
           <input
@@ -154,7 +155,7 @@ const UpdateProperties = () => {
           />
         </div>
 
-        {/* User Name (Read Only) */}
+        
         <div>
           <label className="font-semibold">User Name</label>
           <input
@@ -166,7 +167,7 @@ const UpdateProperties = () => {
           />
         </div>
 
-        {/* Submit Button */}
+       
         <button
           type="submit"
           className="w-full bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg font-semibold"

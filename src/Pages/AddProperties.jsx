@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import axios, { Axios } from 'axios';
+import { useNavigate } from 'react-router';
+import toast from "react-hot-toast";
 
 const AddProperties = () => {
 
+
   const {user}=useContext(AuthContext);
+  const navigation=useNavigate();
 
   const handleSubmit=(e)=>{
     e.preventDefault();
@@ -37,8 +41,10 @@ const AddProperties = () => {
   axios.post('http://localhost:3000/properties',formData)
     .then(res=>{
       console.log(res);
+      toast.success("Property added successfully!");
       
     })
+    navigation('/all-properties')
 
   }
     return (

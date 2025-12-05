@@ -3,6 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router";
 import { FaLocationDot } from "react-icons/fa6";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const MyProperties = () => {
   const [myProperties, setMyProperties] = useState([]);
@@ -25,6 +26,7 @@ const MyProperties = () => {
       const filterData= myProperties.filter(property=>property._id!=id)
       console.log(filterData);
       setMyProperties(filterData)
+       toast.success("Deleted successfully!");
       
     })
     .catch(err=>{

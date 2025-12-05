@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const PropertyDetails = () => {
   const { myId } = useParams();
@@ -41,7 +42,7 @@ const PropertyDetails = () => {
       setRatings([...ratings, ratingData]);
       setStars(0);
       setReview("");
-      alert("Review added!");
+      toast.success("Review added successfully!");
     });
   };
 
