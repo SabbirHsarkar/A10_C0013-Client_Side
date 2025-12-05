@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
-import toast from "react-hot-toast";
+
+import Swal from "sweetalert2";
 const UpdateProperties = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
@@ -49,9 +50,20 @@ const UpdateProperties = () => {
     axios.put(`http://localhost:3000/update/${id}`, formData)
       .then((res) => {
         console.log(res.data);
-        navigation(`/details/${properties?._id}`)
-        toast.success("Property updated successfully!");
-      })
+        Swal.fire({
+        icon: 'success',
+        title: 'Updated!',
+        text: 'Property updated successfully!',
+        showConfirmButton: false,
+        timer: 2000
+      });
+
+      // Navigation after delay
+      setTimeout(() => {
+        navigation(`/details/${properties?._id}`);
+      }, 2000);
+    })
+      
       .catch((err) => {
         console.log(err);
       });

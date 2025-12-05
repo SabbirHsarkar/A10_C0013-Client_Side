@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { FaHouseUser } from "react-icons/fa";
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [isChecked,setIsChecked]=useState(true)
   
   const handleThemeChange=()=>{
@@ -169,12 +169,12 @@ const Navbar = () => {
                     />
                   </Link>
 
-                  <button
+                  {/* <button
                     onClick={logOut}
                     className="px-4 py-2 rounded-lg bg-white/20 text-white hover:bg-white/30 transition-all"
                   >
                     Logout
-                  </button>
+                  </button> */}
                 </>
               ) : (
 
