@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import axios, { Axios } from 'axios';
 import { useNavigate } from 'react-router';
-import toast from "react-hot-toast";
+
+import Swal from 'sweetalert2';
 
 const AddProperties = () => {
 
@@ -41,10 +42,20 @@ const AddProperties = () => {
   axios.post('http://localhost:3000/properties',formData)
     .then(res=>{
       console.log(res);
-      toast.success("Property added successfully!");
+       Swal.fire({
+              icon: 'success',
+              title: 'Added!',
+              text: 'Property Added successfully!',
+              showConfirmButton: false,
+              timer: 2000
+            });
       
     })
-    navigation('/all-properties')
+    
+     setTimeout(() => {
+       navigation('/all-properties')
+      }, 2000);
+    
 
   }
 
