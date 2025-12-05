@@ -22,7 +22,7 @@ const MyRatings = () => {
       </h1>
 
       {ratings.length === 0 && (
-        <p className="text-center text-gray-600">No reviews yet.</p>
+        <p className="text-center ">No reviews yet.</p>
       )}
 
       <div className="space-y-5">
@@ -38,9 +38,9 @@ const MyRatings = () => {
             />
 
             <div>
-              <h2 className="text-xl font-semibold">{rating.propertyName}</h2>
+              <h2 className="text-xl bg-white text-black font-semibold">{rating.propertyName}</h2>
 
-              <p className="text-gray-600 text-sm">
+              <p className="text-green-500 text-sm">
                 <strong>Reviewed By:</strong> {rating.reviewerName}
               </p>
 
@@ -49,7 +49,7 @@ const MyRatings = () => {
                 {"☆".repeat(5 - rating.stars)}
               </p>
 
-              <p className="italic mt-2">"{rating.reviewText}"</p>
+              <p className="italic mt-2 text-black">"{rating.reviewText}"</p>
 
               <p className="text-gray-500 text-sm mt-1">
                 <strong>Date:</strong> {rating.reviewDate}

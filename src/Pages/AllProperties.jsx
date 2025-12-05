@@ -27,7 +27,7 @@ const AllProperties = () => {
 
      
 
-      <h2 className="text-4xl font-bold text-center text-blue-900 mb-10">
+ <h2 className="text-4xl font-bold text-center mb-4 ">
         All Properties
       </h2>
   
@@ -36,7 +36,7 @@ const AllProperties = () => {
   <input
     type="text"
     placeholder="Search by Property Name..."
-    className="w-full lg:w-1/3 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+    className="w-full lg:w-1/3 px-4 py-3 border bg-white text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
     value={searchText}
     onChange={(e) => setSearchText(e.target.value)}
   />
@@ -45,7 +45,7 @@ const AllProperties = () => {
   <select
     onChange={(e) => setCategory(e.target.value)}
     defaultValue="Pick a Category"
-    className="w-full lg:w-1/4 px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+    className="w-full lg:w-1/4 px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
   >
     <option disabled={true}>Pick a Category</option>
     <option value="Rent">Rent</option>
@@ -75,7 +75,7 @@ const AllProperties = () => {
               transition: { duration: 0.8, delay: index * 0.15 },
             }}
             whileHover={{ scale: 1.03 }}
-            className="bg-white/70 backdrop-blur-lg rounded-xl shadow-xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-all"
+            className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100"
           >
             {/* Image Section */}
             <div className="relative group">

@@ -71,21 +71,21 @@ const PropertyDetails = () => {
       {/*Form */}
       <form onSubmit={handleSubmit}
         className="mt-8 bg-white p-5 rounded-lg shadow">
-        <h3 className="text-xl font-semibold mb-3">Add Rating</h3>
+        <h3 className="text-xl bg-white text-black font-semibold mb-3">Add Rating</h3>
 
-        <input
+        <input 
           type="number"
           min="1"
           max="5"
           value={stars}
           onChange={(e) => setStars(parseInt(e.target.value))}
           required
-          className="w-full border p-2 rounded mb-3"
+          className="w-full border p-2 rounded mb-3  bg-white text-black"
           placeholder="Rating (1-5)"
         />
 
         <textarea
-          className="w-full border p-2 rounded mb-3"
+          className="w-full border p-2 rounded mb-3  bg-white text-black"
           placeholder="Write a review..."
           value={review}
           onChange={(e) => setReview(e.target.value)}
@@ -98,8 +98,8 @@ const PropertyDetails = () => {
       </form>
 
       {/*Ratings*/}
-      <div className="mt-10">
-        <h3 className="text-2xl font-bold mb-4">Ratings & Reviews</h3>
+      <div className="mt-10  bg-white text-black rounded-2xl ">
+        <h3 className="text-2xl font-bold mb-4 ml-4">Ratings & Reviews</h3>
 
         {ratings.length === 0 && (
           <p className="text-gray-600">No reviews yet. Be the first!</p>

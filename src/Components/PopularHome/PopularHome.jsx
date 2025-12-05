@@ -15,7 +15,7 @@ const PopularHome = () => {
 
   return (
     <div className="py-16 lg:px-[145px]">
-      <h3 className="font-bold text-4xl text-center mb-10 text-blue-900">
+      <h3 className="font-bold text-4xl text-center mb-10 ">
         Featured Real Estate
       </h3>
 

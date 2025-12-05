@@ -67,7 +67,7 @@ const MyProperties = () => {
 
   return (
     <div className="lg:px-[145px] py-10">
-  <h1 className="text-3xl font-bold mb-8 text-gray-800">
+  <h1 className="text-3xl font-bold mb-8 ">
     My Properties
   </h1>
 

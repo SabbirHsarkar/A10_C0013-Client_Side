@@ -49,9 +49,9 @@ const AddProperties = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 px-4 py-10">
+    <div className="min-h-screen flex items-center justify-center  px-4 py-10">
       
-      <div className="w-full max-w-2xl bg-white/80 backdrop-blur-xl shadow-2xl rounded-3xl p-10 border border-white/40 relative overflow-hidden">
+      <div className="w-full max-w-2xl bg-white backdrop-blur-xl shadow-2xl rounded-3xl p-10 border border-white/40 relative overflow-hidden">
 
         {/* Decorative Background Shapes */}
         <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-300/30 rounded-full blur-3xl"></div>
@@ -59,7 +59,7 @@ const AddProperties = () => {
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
 
         {/* Header */}
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8 drop-shadow-sm">
+        <h2 className="text-3xl font-bold text-center  text-gray-800 mb-8 drop-shadow-sm">
           Add a New <span className="text-blue-600">Property</span>
         </h2>
 
@@ -68,23 +68,23 @@ const AddProperties = () => {
 
           {/* Property Name */}
           <div>
-            <label className="font-semibold block">Property Name</label>
+            <label className="font-semibold block  text-black">Property Name</label>
             <input
               type="text"
               name="name"
               placeholder="Ex: Lakeview Apartment"
-              className="input input-bordered w-full bg-white/70 backdrop-blur-md shadow focus:border-blue-500"
+              className="input input-bordered w-full bg-white text-black backdrop-blur-md shadow focus:border-blue-500"
               required
             />
           </div>
 
           {/* Description */}
           <div>
-            <label className="font-semibold block">Description</label>
+            <label className="font-semibold block   text-black">Description</label>
             <textarea
               name="description"
               placeholder="Short details about the property..."
-              className="textarea textarea-bordered w-full bg-white/70 backdrop-blur-md shadow"
+              className="textarea textarea-bordered w-full bg-white text-black backdrop-blur-md shadow"
               rows="3"
               required
             ></textarea>
@@ -92,7 +92,7 @@ const AddProperties = () => {
 
           {/* Category */}
           <div className="relative">
-            <label className="font-semibold block mb-1">Category</label>
+            <label className="font-semibold block mb-1   text-black">Category</label>
 
             <div className="relative">
               <select
@@ -110,11 +110,11 @@ const AddProperties = () => {
                 "
                 required
               >
-                <option value="">🔽 Select Category</option>
-                <option value="Rent">🏘️ Rent</option>
-                <option value="Sale">💰 Sale</option>
-                <option value="Commercial">🏢 Commercial</option>
-                <option value="Land">🌱 Land</option>
+                <option value=""> Select Category</option>
+                <option value="Rent"> Rent</option>
+                <option value="Sale"> Sale</option>
+                <option value="Commercial"> Commercial</option>
+                <option value="Land"> Land</option>
               </select>
 
               {/* Arrow Icon */}
@@ -126,71 +126,71 @@ const AddProperties = () => {
 
           {/* Price */}
           <div>
-            <label className="font-semibold block">Price (BDT)</label>
+            <label className="font-semibold block   text-black">Price (BDT)</label>
             <input
               type="number"
               name="price"
               placeholder="Ex: 35000"
-              className="input input-bordered w-full bg-white/70 backdrop-blur-md shadow"
+              className="input input-bordered w-full bg-white text-black backdrop-blur-md shadow"
               required
             />
           </div>
 
           {/* Location */}
           <div>
-            <label className="font-semibold block">Location</label>
+            <label className="font-semibold block   text-black">Location</label>
             <input
               type="text"
               name="location"
               placeholder="City, Area, or Full Address"
-              className="input input-bordered w-full bg-white/70 backdrop-blur-md shadow"
+              className="input input-bordered w-full bg-white text-black backdrop-blur-md shadow"
               required
             />
           </div>
 
           {/* Image URL */}
           <div>
-            <label className="font-semibold block">Image URL</label>
+            <label className="font-semibold block   text-black">Image URL</label>
             <input
               type="text"
               name="image"
               placeholder="Paste property image link"
-              className="input input-bordered w-full bg-white/70 backdrop-blur-md shadow"
+              className="input input-bordered w-full bg-white text-black backdrop-blur-md shadow"
               required
             />
           </div>
 
           {/* Date */}
           <div>
-            <label className="font-semibold block">Listing Date</label>
+            <label className="font-semibold block   text-black"> Date</label>
             <input
               type="date"
               name="date"
-              className="input input-bordered w-full bg-white/70 backdrop-blur-md shadow"
+              className="input input-bordered w-full bg-white text-black backdrop-blur-md shadow"
               required
             />
           </div>
 
           {/* Email (Read Only) */}
           <div>
-            <label className="font-semibold block">User Email</label>
+            <label className="font-semibold block  text-black">User Email</label>
             <input
               type="email"
               name="email"
               value={user?.email}
-              className="input w-full bg-gray-100 cursor-not-allowed"
+              className="input w-full bg-white text-black cursor-not-allowed"
               readOnly
             />
           </div>
 
           {/* Username (Read Only) */}
           <div>
-            <label className="font-semibold block">User Name</label>
+            <label className="font-semibold block   text-black">User Name</label>
             <input
               type="text"
               name="username"
               value={user?.displayName}
-              className="input w-full bg-gray-100 cursor-not-allowed"
+              className="input w-full bg-white text-black cursor-not-allowed"
               readOnly
             />
           </div>

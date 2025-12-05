@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router";
 
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -6,6 +6,18 @@ import { FaHouseUser } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isChecked,setIsChecked]=useState(true)
+  
+  const handleThemeChange=()=>{
+    setIsChecked(!isChecked);
+    if(isChecked){
+      document.querySelector('html').setAttribute('data-theme','dark')
+    }else{
+      document.querySelector('html').setAttribute('data-theme','light')
+    }
+    
+  }
+  
 
   const navLinks = (
     <>
@@ -32,10 +44,10 @@ const Navbar = () => {
           }`
         }
       >
-       All Properties
+        All Properties
       </NavLink>
 
-       <NavLink
+      <NavLink
         to="/properties"
         className={({ isActive }) =>
           `px-4 py-2 transition-all duration-300 ${
@@ -48,7 +60,7 @@ const Navbar = () => {
         Add Properties
       </NavLink>
 
-       <NavLink
+      <NavLink
         to="/my-properties"
         className={({ isActive }) =>
           `px-4 py-2 transition-all duration-300 ${
@@ -73,6 +85,9 @@ const Navbar = () => {
       >
         My Ratings
       </NavLink>
+
+
+
     </>
   );
 
@@ -118,12 +133,30 @@ const Navbar = () => {
               className="flex items-center gap-2 text-white font-semibold text-lg"
             >
               {/* <img src={logo} alt="logo" className="w-6" /> */}
-              <FaHouseUser />HomeNest
+              <FaHouseUser />
+              HomeNest
             </Link>
 
             <div className="hidden md:flex gap-6 text-sm font-medium text-white">
               {navLinks}
             </div>
+
+
+
+<div className="items-center px-4 py-2">
+  <label className="toggle text-base-content">
+  <input 
+   onClick={handleThemeChange}
+  
+  type="checkbox" value="synthwave" className="theme-controller" />
+
+  <svg aria-label="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></g></svg>
+
+  <svg aria-label="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></g></svg>
+
+</label>
+</div>
+
 
             <div className="flex items-center gap-4">
               {user ? (
@@ -144,19 +177,47 @@ const Navbar = () => {
                   </button>
                 </>
               ) : (
-                <Link
-                  to="/login"
-                  className="px-5 py-2 rounded-lg bg-white/20 backdrop-blur-md text-white font-semibold hover:bg-white/30 transition-all"
-                >
-                  Login
-                </Link>
-              )}
+
+              <>
+              <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+
+  <Link
+    to="/login"
+    className="w-full sm:w-auto text-center px-5 py-2 rounded-lg 
+               bg-white/20 backdrop-blur-md 
+               text-white font-semibold 
+               hover:bg-white/30 transition-all"
+  >
+    Login
+  </Link>
+
+  <Link
+    to="/signup"
+    className="w-full sm:w-auto text-center px-5 py-2 rounded-lg 
+               bg-white/20 backdrop-blur-md 
+               text-white font-semibold
+               hover:bg-white/30 transition-all"
+  >
+    Signup
+  </Link>
+
+</div>
+              </>
+              
+              
+                
+               
+              ) 
+              
+              
+              
+              }
             </div>
           </div>
         </div>
       </div>
 
-      {/* responsive for mobile */}
+      {/* responsive mobile */}
       <div className="drawer-side">
         <label htmlFor="nav-drawer" className="drawer-overlay"></label>
 
