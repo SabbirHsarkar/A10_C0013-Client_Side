@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import { FaLocationDot } from "react-icons/fa6";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const MyProperties = () => {
   const [myProperties, setMyProperties] = useState([]);
@@ -20,20 +21,48 @@ const MyProperties = () => {
 
 
   const handleDelete=(id)=>{
-    axios.delete(`http://localhost:3000/delete/${id}`)
+     
+    Swal.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+  if (result.isConfirmed) {
+      axios.delete(`http://localhost:3000/delete/${id}`)
     .then(res=>{
       console.log(res.data);
-      const filterData= myProperties.filter(property=>property._id!=id)
+
+      if(res.data.deletedCount==1){
+        const filterData= myProperties.filter(property=>property._id!=id)
       console.log(filterData);
       setMyProperties(filterData)
       
        toast.success("Deleted successfully!");
+
+        Swal.fire({
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
+    });
+
+      }
+      
       
     })
     .catch(err=>{
       console.log(err);
       
     })
+
+   
+  }
+});
+    
+  
   }
 
   return (

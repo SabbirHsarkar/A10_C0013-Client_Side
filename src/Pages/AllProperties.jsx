@@ -5,16 +5,19 @@ import { FaCalendar } from "react-icons/fa";
 
 const AllProperties = () => {
   const [properties, setProperties] = useState([]);
+  
   const [category,setCategory]=useState('');
+  const [searchText, setSearchText] = useState('');
+
 
   useEffect(() => {
-    fetch(`http://localhost:3000/properties?category=${category}`)
-      .then((res) => res.json())
-      .then((data) => setProperties(data))
-      .catch((err) => console.log(err));
-      console.log("Sabbir");
-      
-  }, [category]);
+  fetch(`http://localhost:3000/properties?category=${category}&search=${searchText}`)
+    .then(res => res.json())
+    .then(data => setProperties(data))
+    .catch(err => console.log(err));
+}, [category, searchText]);
+
+
 
   console.log(category);
   
@@ -27,16 +30,34 @@ const AllProperties = () => {
       <h2 className="text-4xl font-bold text-center text-blue-900 mb-10">
         All Properties
       </h2>
+  
+ <div className="flex flex-col lg:flex-row justify-between items-center mb-6 gap-4">
+  {/* Search Input */}
+  <input
+    type="text"
+    placeholder="Search by Property Name..."
+    className="w-full lg:w-1/3 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+    value={searchText}
+    onChange={(e) => setSearchText(e.target.value)}
+  />
+
+  {/* Category Dropdown */}
+  <select
+    onChange={(e) => setCategory(e.target.value)}
+    defaultValue="Pick a Category"
+    className="w-full lg:w-1/4 px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+  >
+    <option disabled={true}>Pick a Category</option>
+    <option value="Rent">Rent</option>
+    <option value="Sale">Sale</option>
+    <option value="Commercial">Commercial</option>
+    <option value="Land">Land</option>
+  </select>
+</div>
 
 
-       <select onChange={(e)=>setCategory(e.target.value)} 
-       defaultValue="Pick a Category" className="select select-primary mb-5">
-  <option disabled={true}>Pick a Category</option>
-   <option value="Rent">Rent</option>
-          <option value="Sale">Sale</option>
-         <option value="Commercial">Commercial</option>
-        <option value="Land">Land</option>
-</select>
+   
+
 
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
