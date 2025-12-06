@@ -53,7 +53,7 @@ const PropertyDetails = () => {
     });
   };
 
-  if (!property) return <p className="text-center mt-10">Loading...</p>;
+  if (!property) return <p className="text-center mt-10"><span className="loading loading-dots loading-xl"></span></p>;
 
   return (
     <div className="max-w-5xl mx-auto p-6">
