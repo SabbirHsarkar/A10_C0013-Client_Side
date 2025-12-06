@@ -12,7 +12,7 @@ const UpdateProperties = () => {
   const navigation=useNavigate()
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/properties/${id}`).then((res) => {
+    axios.get(`https://homenest-two.vercel.app/properties/${id}`).then((res) => {
       setProperties(res.data);
       setCategory(res.data.category);
     });
@@ -47,7 +47,7 @@ const UpdateProperties = () => {
     };
     console.log(formData);
 
-    axios.put(`http://localhost:3000/update/${id}`, formData)
+    axios.put(`https://homenest-two.vercel.app/update/${id}`, formData)
       .then((res) => {
         console.log(res.data);
         Swal.fire({

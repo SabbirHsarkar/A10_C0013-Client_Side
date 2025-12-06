@@ -9,7 +9,7 @@ const MyRatings = () => {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`http://localhost:3000/my-ratings?email=${user.email}`)
+        .get(`https://homenest-two.vercel.app/my-ratings?email=${user.email}`)
         .then((res) => setRatings(res.data))
         .catch((err) => console.log(err));
     }

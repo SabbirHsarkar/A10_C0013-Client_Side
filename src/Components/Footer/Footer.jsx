@@ -70,10 +70,10 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex gap-6 mt-6 text-2xl text-gray-300">
-            <a className="hover:text-white transition"><FaFacebookF /></a>
-            <a className="hover:text-white transition"><FaTwitter /></a>
-            <a className="hover:text-white transition"><FaInstagram /></a>
-            <a className="hover:text-white transition"><FaLinkedinIn /></a>
+            <a href="" className="hover:text-white transition"><FaFacebookF /></a>
+            <a href="" className="hover:text-white transition"><FaTwitter /></a>
+            <a href="" className="hover:text-white transition"><FaInstagram /></a>
+            <a href="" className="hover:text-white transition"><FaLinkedinIn /></a>
           </div>
         </div>
       </div>

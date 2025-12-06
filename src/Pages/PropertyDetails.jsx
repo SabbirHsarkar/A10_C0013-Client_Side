@@ -16,11 +16,11 @@ const PropertyDetails = () => {
 
   // Load property + ratings
   useEffect(() => {
-    axios.get(`http://localhost:3000/properties/${myId}`).then((res) => {
+    axios.get(`https://homenest-two.vercel.app/properties/${myId}`).then((res) => {
       setProperty(res.data);
     });
 
-    axios.get(`http://localhost:3000/property-ratings/${myId}`)
+    axios.get(`https://homenest-two.vercel.app/property-ratings/${myId}`)
       .then((res) => setRatings(res.data));
   }, [myId]);
 
@@ -39,7 +39,7 @@ const PropertyDetails = () => {
       reviewerEmail: user.email,
     };
 
-    axios.post("http://localhost:3000/ratings", ratingData).then(() => {
+    axios.post("https://homenest-two.vercel.app/ratings", ratingData).then(() => {
       setRatings([...ratings, ratingData]);
       setStars(0);
       setReview("");

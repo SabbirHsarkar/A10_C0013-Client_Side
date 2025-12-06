@@ -39,7 +39,7 @@ const AddProperties = () => {
     }
     console.log(formData)
 
-  axios.post('http://localhost:3000/properties',formData)
+  axios.post('https://homenest-two.vercel.app/properties',formData)
     .then(res=>{
       console.log(res);
        Swal.fire({

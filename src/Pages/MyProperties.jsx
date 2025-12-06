@@ -13,7 +13,7 @@ const MyProperties = () => {
   useEffect(() => {
     if (!user?.email) return;
 
-    fetch(`http://localhost:3000/my-properties?email=${user.email}`)
+    fetch(`https://homenest-two.vercel.app/my-properties?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setMyProperties(data))
       .catch((err) => console.log(err));
@@ -32,7 +32,7 @@ const MyProperties = () => {
   confirmButtonText: "Yes, delete it!"
 }).then((result) => {
   if (result.isConfirmed) {
-      axios.delete(`http://localhost:3000/delete/${id}`)
+      axios.delete(`https://homenest-two.vercel.app/delete/${id}`)
     .then(res=>{
       console.log(res.data);
 

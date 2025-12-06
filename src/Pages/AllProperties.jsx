@@ -11,7 +11,7 @@ const AllProperties = () => {
 
 
   useEffect(() => {
-  fetch(`http://localhost:3000/properties?category=${category}&search=${searchText}`)
+  fetch(`https://homenest-two.vercel.app/properties?category=${category}&search=${searchText}`)
     .then(res => res.json())
     .then(data => setProperties(data))
     .catch(err => console.log(err));
