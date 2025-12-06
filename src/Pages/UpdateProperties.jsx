@@ -70,42 +70,42 @@ const UpdateProperties = () => {
   };
   return (
     <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-10">
-      <h2 className="text-2xl font-bold text-center mb-5">Update Property</h2>
+      <h2 className="text-2xl text-black font-bold text-center mb-5">Update Property</h2>
 
       <form onSubmit={handleUpdate} className="space-y-4">
         
         <div>
-          <label className="font-semibold">Property Name</label>
+          <label className="font-semibold  text-black">Property Name</label>
           <input
             type="text"
             name="name"
             defaultValue={properties?.name}
             placeholder="Enter property name"
-            className="w-full p-3 border rounded-lg"
+            className="w-full p-3 border rounded-lg  text-black"
             required
           />
         </div>
 
         
         <div>
-          <label className="font-semibold">Description</label>
+          <label className="font-semibold  text-black">Description</label>
           <textarea
             name="description"
             defaultValue={properties?.description}
             placeholder="Write description"
-            className="w-full p-3 border rounded-lg"
+            className="w-full p-3 border rounded-lg  text-black"
             required
           ></textarea>
         </div>
 
     
         <div>
-          <label className="font-semibold">Category</label>
+          <label className="font-semibold  text-black">Category</label>
           <select
             name="category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full p-3 border rounded-lg"
+            className="w-full p-3 border rounded-lg  text-black"
             required
           >
             <option value="">Select Category</option>
@@ -118,64 +118,64 @@ const UpdateProperties = () => {
 
         
         <div>
-          <label className="font-semibold">Price (in BDT)</label>
+          <label className="font-semibold  text-black">Price (in BDT)</label>
           <input
             type="number"
             name="price"
             defaultValue={properties?.price}
             placeholder="Enter price"
-            className="w-full p-3 border rounded-lg"
+            className="w-full p-3 border rounded-lg  text-black"
             required
           />
         </div>
 
      
         <div>
-          <label className="font-semibold">Location</label>
+          <label className="font-semibold  text-black">Location</label>
           <input
             type="text"
             name="location"
             defaultValue={properties?.location}
             placeholder="City, area, or full address"
-            className="w-full p-3 border rounded-lg"
+            className="w-full p-3 border rounded-lg  text-black"
             required
           />
         </div>
 
         
         <div>
-          <label className="font-semibold">Image URL</label>
+          <label className="font-semibold  text-black">Image URL</label>
           <input
             type="text"
             name="image"
             defaultValue={properties?.image}
             placeholder="Paste image link"
-            className="w-full p-3 border rounded-lg"
+            className="w-full p-3 border rounded-lg  text-black"
             required
           />
         </div>
 
        
         <div>
-          <label className="font-semibold">User Email</label>
+          <label className="font-semibold  text-black">User Email</label>
           <input
             type="email"
             name="email"
             value={user?.email}
             readOnly
-            className="w-full p-3 border bg-gray-100 rounded-lg cursor-not-allowed"
+            className="w-full p-3 border  text-black bg-gray-100 rounded-lg cursor-not-allowed"
           />
         </div>
 
         
         <div>
-          <label className="font-semibold">User Name</label>
+          <label className="font-semibold  text-black">User Name</label>
           <input
             type="text"
             name="username"
             value={user?.displayName}
             readOnly
-            className="w-full p-3 border bg-gray-100 rounded-lg cursor-not-allowed"
+            className="w-full p-3 border  text-black bg-gray-100 rounded-lg cursor-not-allowed"
           />
         </div>
 
