@@ -1,16 +1,38 @@
-# React + Vite
+ HomeNest – Property Management & Real Estate Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Site URL: https://assignment10-sabbir-hossain-sarkar.netlify.app
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+ Features
 
-## Expanding the ESLint configuration
+-  Users can explore different types of properties with search & filter options.
+-  Authenticated users can add, update, and delete their own listed properties.
+-  Users can submit ratings & reviews for any property.
+-  Fully secure authentication system using Firebase (Login, Signup, Google Login).
+-  Fully responsive design for mobile, tablet, and desktop devices.
+-  Backend API built with Express.js & MongoDB deployed on Vercel.
+-  Modern UI using React, TailwindCSS, and DaisyUI.
+-  Users can view their added properties & ratings separately on dashboard.
+-  Individual property details page with rating, description & images.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Technologies Used
+
+### Frontend**
+- React.js
+- React Router
+- TailwindCSS
+- DaisyUI
+- Axios / Fetch
+- Firebase Authentication
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Vercel Deployment
+
+
