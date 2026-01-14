@@ -22,8 +22,7 @@ const Navbar = () => {
         { to: "/", label: "Home" },
         { to: "/all-properties", label: "All Properties" },
         { to: "/properties", label: "Add Properties" },
-        { to: "/my-properties", label: "My Properties" },
-        { to: "/my-ratings", label: "My Ratings" },
+        
       ].map((item) => (
         <NavLink
           key={item.to}
@@ -126,7 +125,7 @@ const Navbar = () => {
 
                     <li>
                       <Link
-                        to="/dashboard"
+                        to="/dashboard/dashboard-home"
                         className="block px-4 py-2 rounded-lg hover:bg-purple-100"
                       >
                         Dashboard
